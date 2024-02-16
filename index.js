@@ -17,12 +17,3 @@ const app = initializeApp(firebaseConfig);
 // Get Firestore database from the app
 const dataBase = getFirestore(app);
 
-for (let i = 0; i < 5; i++) {
-  // Add new document which contains a collection of users
-  let muhammad = await addDoc(collection(dataBase, 'users'), {
-    first: 'Muhammad',
-    last: 'Elsayed',
-    born: 2005
-  });
-  console.log(i, ' - added data to firestore with id ', muhammad.id);
-}
